@@ -14,6 +14,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        /*
+        google cloud 에서 승인된 리디렉션을 지정함. 해당 리디렉션 /login/oauth2/code/google 은 스프링 시큐리티에서 기본 제공하는 URL
+        처음 실행해서 spring framework 이 시작될때 설정 됨.
+         */
+
         http.csrf().disable().headers().frameOptions().disable()
                 .and()
                     .authorizeRequests()
@@ -24,5 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .logout().logoutSuccessUrl("/")
                 .and()
                     .oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
+                    //oauth2Login - OAuth2 로그인 기능에 대한 여러 설정의 진입점
+                    //userInfoEndPoint - OAuth2 로그인 후 사용저 정보를 가져올 때의 설정
+                    //userService - 소셜 로그인 성공 후 후속조치 진행 (가져온 사용자 정보를 바탕으로 추가 진행 기능 명시)
     }
 }
