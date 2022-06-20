@@ -28,7 +28,7 @@ dependencies {
     implementation('com.h2database:h2')
 //
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client') //authentication
-//    implementation('org.springframework.session:spring-session-jdbc') //authentication
+    implementation('org.springframework.session:spring-session-jdbc') //authentication
 //
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 //    testImplementation("org.springframework.security:spring-security-test") //authentication
