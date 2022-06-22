@@ -31,7 +31,7 @@ dependencies {
     implementation('org.springframework.session:spring-session-jdbc') //authentication
 //
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-//    testImplementation("org.springframework.security:spring-security-test") //authentication
+    testImplementation("org.springframework.security:spring-security-test") //authentication
 }
 
 test {
