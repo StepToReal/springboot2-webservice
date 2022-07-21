@@ -19,3 +19,6 @@ notifications:
   email:
     recipients:
       - jcob0920@gmail.com
+
+before_install:
+  - chmod +x gradlew
